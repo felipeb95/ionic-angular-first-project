@@ -47,7 +47,7 @@ export class PlacesService {
   }
 
   deletePlace(placeId: string) {
-    this.places.filter(place => place.id !== placeId);
+    this.places = this.places.filter(place => place.id !== placeId);
   }
 
 }
