@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlacesService } from './places.service';
+import { Place } from './place.model';
 
 @Component({
   selector: 'app-places',
@@ -7,24 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacesPage implements OnInit {
 
-  places = [
-    {
-      id: '1',
-      title: 'Eiffel tower',
-      imageURL: 'https://i.pinimg.com/originals/d0/3e/2f/d03e2f00438ab794cb0769791358070a.jpg',
-      comments: ['Awesome place', 'Great experience']
-    },
-    {
-      id: '2',
-      title: 'Statue of liberty',
-      imageURL: 'https://www.statueofliberty.org/wp-content/uploads/2020/03/img-landing-liberty@2x.jpg',
-      comments: ['Wow', 'Amazing!']
-    },
-  ];
+  places = [];
 
-  constructor() { }
+  constructor(private placesService: PlacesService) { }
 
   ngOnInit() {
+    this.places = this.placesService.getPlaces();
   }
 
 }
