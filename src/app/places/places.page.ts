@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PlacesService } from './places.service';
-import { Place } from './place.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,6 +23,10 @@ export class PlacesPage implements OnInit {
 
   addNewPlace() {
     this.router.navigate(['/new-place']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
   }
 
 }
